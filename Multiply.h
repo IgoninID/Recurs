@@ -20,7 +20,7 @@ int RecMultiply(int a, int b);
 /// <returns>
 /// Результат умножения
 /// </returns>
-int IntMult(int a, int b);
+int ItMult(int a, int b);
 
 /// <summary>
 /// Тесты для функции умножения целых чисел с помощью суммы

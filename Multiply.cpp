@@ -30,7 +30,7 @@ int RecMultiply(int a, int b)
 /// <returns>
 /// Результат умножения
 /// </returns>
-int IntMult(int a, int b)
+int ItMult(int a, int b)
 {
 	int rez = 0;
 	if ((b == 0) || (a == 0))
@@ -40,8 +40,6 @@ int IntMult(int a, int b)
 		a = -a;
 		b = -b;
 	}
-	if (b == 1)
-		return a;
 	for (int i = 0; i < b; i++)
 		rez = rez + a;
 	return rez;
@@ -66,15 +64,15 @@ void Rectest()
 	assert(RecMultiply(6, 7) == 42);
 
 	// Умножения с 0
-	assert(IntMult(0, 0) == 0);
-	assert(IntMult(5, 0) == 0);
-	assert(IntMult(0, 5) == 0);
-	assert(IntMult(-5, 0) == 0);
-	assert(IntMult(0, -5) == 0);
+	assert(ItMult(0, 0) == 0);
+	assert(ItMult(5, 0) == 0);
+	assert(ItMult(0, 5) == 0);
+	assert(ItMult(-5, 0) == 0);
+	assert(ItMult(0, -5) == 0);
 	// Умножения с отрицательными числами
-	assert(IntMult(-5, -4) == 20);
-	assert(IntMult(-4, 7) == -28);
-	assert(IntMult(9, -3) == -27);
+	assert(ItMult(-5, -4) == 20);
+	assert(ItMult(-4, 7) == -28);
+	assert(ItMult(9, -3) == -27);
 	// Умножение с положительными числами
-	assert(IntMult(6, 7) == 42);
+	assert(ItMult(6, 7) == 42);
 }
