@@ -23,7 +23,32 @@ int RecMultiply(int a, int b)
 }
 
 /// <summary>
-/// Тесты для функции умножения целых чисел с помощью рекурсии суммы
+/// Функция умножения целых чисел с помощью итеррации суммы
+/// </summary>
+/// <param name="a - первое число"></param>
+/// <param name="b - второе число"></param>
+/// <returns>
+/// Результат умножения
+/// </returns>
+int IntMult(int a, int b)
+{
+	int rez = 0;
+	if ((b == 0) || (a == 0))
+		return 0;
+	if (b < 0)
+	{
+		a = -a;
+		b = -b;
+	}
+	if (b == 1)
+		return a;
+	for (int i = 0; i < b; i++)
+		rez = rez + a;
+	return rez;
+}
+
+/// <summary>
+/// Тесты для функции умножения целых чисел с помощью суммы
 /// </summary>
 void Rectest()
 {
@@ -39,4 +64,17 @@ void Rectest()
 	assert(RecMultiply(9, -3) == -27);
 	// Умножение с положительными числами
 	assert(RecMultiply(6, 7) == 42);
+
+	// Умножения с 0
+	assert(IntMult(0, 0) == 0);
+	assert(IntMult(5, 0) == 0);
+	assert(IntMult(0, 5) == 0);
+	assert(IntMult(-5, 0) == 0);
+	assert(IntMult(0, -5) == 0);
+	// Умножения с отрицательными числами
+	assert(IntMult(-5, -4) == 20);
+	assert(IntMult(-4, 7) == -28);
+	assert(IntMult(9, -3) == -27);
+	// Умножение с положительными числами
+	assert(IntMult(6, 7) == 42);
 }
